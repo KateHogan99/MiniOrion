@@ -76,7 +76,7 @@ The important architectural idea is that each module has a relatively narrow res
 
 ## Module Responsibilities
 
-### `Vector2D`
+### Vector2D
 
 #### Files
 
@@ -107,7 +107,7 @@ Vector operations appear throughout the simulation, including:
 
 Centralizing these operations reduces duplicated code and makes the rest of the simulator easier to read.
 
-### `State`
+### State
 
 #### Files
 
@@ -136,7 +136,7 @@ The state representation provides the common interface used by the numerical int
 
 This also begins to resemble the mathematical structure used in real numerical simulation and GNC systems, where a system is represented as a state vector and propagated according to its equations of motion.
 
-### `Dynamics`
+### Dynamics
 
 #### Files
 
@@ -184,7 +184,7 @@ The integrator answers:
 
 Keeping those responsibilities separate will make it easier to introduce additional force models later.
 
-### `Integrator`
+### Integrator
 
 #### Files
 
@@ -230,7 +230,7 @@ The numerical integrator does not need to know the details of why an acceleratio
 
 This makes it possible to improve or replace the dynamics model without rewriting the integration algorithm.
 
-### `OrbitalMechanics`
+### OrbitalMechanics
 
 #### Files
 
@@ -265,7 +265,7 @@ These quantities provide more meaningful ways of evaluating an orbital simulatio
 
 They will also become important inputs to the validation framework in later iterations.
 
-### `Simulation`
+### Simulation
 
 #### Files
 
@@ -319,7 +319,7 @@ The `Simulation` module acts as the bridge between the underlying physics and th
 
 Rather than having `main.cpp` perform the actual simulation work, `main.cpp` now primarily coordinates the major components.
 
-### `TestCases`
+### TestCases
 
 #### Files
 
@@ -342,7 +342,7 @@ Separating test-case creation from the simulation engine means that new scenario
 
 This will become increasingly useful as the project develops more sophisticated validation scenarios.
 
-### `Validation`
+### Validation
 
 #### Files
 
@@ -379,7 +379,7 @@ The validation framework provides a way to quantitatively evaluate the numerical
 
 This will be expanded substantially in later iterations.
 
-### `Output`
+### Output
 
 #### Files
 
