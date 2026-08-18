@@ -219,7 +219,7 @@ $$
 with the final update taking the form:
 
 $$
-y_{n+1} = y_n + \frac{\delta t}{6}\left(k_1 + 2k_2 + 2k_3 + k_4\right)
+y_{n+1} = y_n + \frac{\Delta t}{6}\left(k_1 + 2k_2 + 2k_3 + k_4\right)
 $$
 
 #### Why this matters
