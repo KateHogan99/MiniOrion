@@ -29,7 +29,7 @@ This iteration introduces the first numerical integrator: Euler's method.
 The spacecraft state is represented as:
 
 $$
-\mathbf{x}=\begin{bmatrix}\mathbf{r} \\\mathbf{v}\end{bmatrix}
+\mathbf{x} = \begin{bmatrix} \mathbf{r} \\ \mathbf{v} \end{bmatrix}
 $$
 
 where:
@@ -40,12 +40,7 @@ where:
 The derivative of the state is:
 
 $$
-\dot{\mathbf{x}}
-=
-\begin{bmatrix}
-\mathbf{v} \\
-\mathbf{a}
-\end{bmatrix}
+\dot{\mathbf{x}} = \begin{bmatrix} \mathbf{v} \\ \mathbf{a} \end{bmatrix}
 $$
 
 A `StateDerivative` structure was introduced to represent this explicitly.
@@ -61,18 +56,13 @@ $$
 and
 
 $$
-\dot{\mathbf{v}} =
-\mathbf{a}_{gravity}
-+
-\mathbf{a}_{thrust}
+\dot{\mathbf{v}} = \mathbf{a}_{gravity} + \mathbf{a}_{thrust}
 $$
 
 The gravitational acceleration remains:
 
 $$
-\mathbf{a}_{gravity}
-=
--\frac{\mu}{r^3}\mathbf{r}
+\mathbf{a}_{gravity} = -\frac{\mu}{r^3}\mathbf{r}
 $$
 
 ## Euler Integration
@@ -80,11 +70,7 @@ $$
 Euler's method approximates the state at the next timestep using:
 
 $$
-\mathbf{x}_{n+1}
-=
-\mathbf{x}_n
-+
-\dot{\mathbf{x}}_n\Delta t
+\mathbf{x}_{n+1} = \mathbf{x}_n + \dot{\mathbf{x}}_n\Delta t
 $$
 
 The implementation separates this operation into:
@@ -109,11 +95,7 @@ At this stage, these values are not yet used to model propellant consumption or 
 A basic vehicle-mass calculation was implemented:
 
 $$
-m_{total}
-=
-m_{dry}
-+
-m_{propellant}
+m_{total} = m_{dry} + m_{propellant}
 $$
 
 This establishes the foundation for later work involving propulsion and $\Delta v$.
