@@ -405,3 +405,90 @@ The simulation should calculate results.
 The output module should decide how those results are presented to the user.
 
 This will make it easier to eventually replace console output with other forms of data visualization or file output.
+
+## Program Flow
+
+
+
+## What Changed from Day 5
+
+
+
+#### Day 5
+
+
+
+#### Day 6
+
+
+
+## Key Design Decisions
+
+### Separation of dynamics and integration
+
+
+
+### Separation of simulation and output
+
+
+
+### Separation of test cases from simulation logic
+
+
+
+### Dedicated validation module
+
+
+
+## C++ Concepts Practiced
+
+
+
+## Physics Concepts Practiced
+
+
+
+## Limitations
+
+
+
+## Lessons Learned
+
+
+
+## Next Steps
+
+
+
+## Project Structure
+
+The Day 6 directory is organized as follows:
+
+```text
+day6/
+├── include/
+│   ├── Dynamics.h
+│   ├── Integrator.h
+│   ├── OrbitalMechanics.h
+│   ├── Output.h
+│   ├── Simulation.h
+│   ├── State.h
+│   ├── TestCases.h
+│   ├── Validation.h
+│   └── Vector2D.h
+│
+├── src/
+│   ├── Dynamics.cpp
+│   ├── Integrator.cpp
+│   ├── OrbitalMechanics.cpp
+│   ├── Output.cpp
+│   ├── Simulation.cpp
+│   ├── TestCases.cpp
+│   ├── Validation.cpp
+│   ├── Vector2D.cpp
+│   └── main.cpp
+│
+└── README.md
+```
+
+## Summary
