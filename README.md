@@ -449,3 +449,57 @@ The exact implementation will evolve as I learn more.
 The project is intentionally being developed from relatively fundamental components rather than relying on a high-level aerospace simulation framework.
 
 The core numerical loop is conceptually:
+
+```text
+Current State
+     │
+     ▼
+Dynamics Model
+     │
+     ▼
+State Derivative
+     │
+     ▼
+Numerical Integrator
+     │
+     ▼
+Next State
+     │
+     ▼
+Validation / Analysis
+```
+
+This structure allows individual pieces of the simulation to be tested and improved independently.
+
+---
+
+# Validation Philosophy
+
+A major goal of this project is to avoid treating "the program runs without crashing" as evidence that the simulation is correct.
+
+Where possible, the simulation is validated using independent physical or mathematical expectations.
+
+Examples include:
+
+### Analytical Solutions
+
+Comparing numerical propagation against a known analytical solution for constant acceleration.
+
+### Conservation Laws
+
+Checking whether quantities that should remain constant in an ideal two-body system remain sufficiently constant numerically.
+
+Examples:
+
+- Specific orbital energy
+- Specific angular momentum
+
+### Physical Expectations
+
+Checking whether trajectories behave as expected for:
+
+- Circular orbits
+- Elliptical orbits
+- Hyperbolic / escape trajectories
+
+As the project develops, I intend to make these tests increasingly quantitative.
