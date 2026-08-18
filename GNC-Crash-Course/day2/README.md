@@ -41,3 +41,24 @@ struct State
     double ax;
     double ay;
 };
+```
+
+Day 2 replaces this with:
+```cpp
+struct Vector2D
+{
+    double x;
+    double y;
+};
+
+struct State
+{
+    Vector2D position;
+    Vector2D velocity;
+    Vector2D acceleration;
+};
+```
+
+This better represents the mathematical structure of the problem.
+
+A spacecraft state can now be thought of as:
