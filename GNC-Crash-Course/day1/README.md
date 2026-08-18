@@ -1,43 +1,97 @@
-# Day 1 — C++ and Orbital Mechanics Foundations
+# Day 1 — Basic 2D Kinematics
 
 ## Objective
 
-Build my first C++ program for the Mini-Orion GNC project and
-begin translating basic orbital mechanics equations into code.
+Build a minimal C++ program that propagates the position and velocity of a spacecraft through time under constant acceleration.
 
-## Topics
+This iteration was intended to establish the basic physics and C++ concepts needed for the later orbital mechanics simulator.
 
-- C++ variables and types
-- Functions
-- Basic console I/O
-- Cartesian position and velocity
-- Newtonian gravity
-- Gravitational acceleration
+## Concepts Studied
 
-## Physics
+### Physics
 
-For a two-body gravitational system:
+- Position, velocity, and acceleration
+- Constant-acceleration kinematics
+- Displacement
+- Speed
+- Time-based state propagation
 
-a = -μ/r³ * r
+The primary equations used were:
 
-where:
+### Position
 
-- μ is the gravitational parameter
-- r is the position vector
-- r is the magnitude of the position vector
+$$
+x(t) = x_0 + v_0t + \frac{1}{2}at^2
+$$
+
+### Velocity
+
+$$
+v(t) = v_0 + at
+$$
+
+For the 2D simulation, these equations are applied independently to the X and Y components.
 
 ## Implementation
 
-The program calculates gravitational acceleration from a given
-position and prints the resulting acceleration vector.
+The program defines a `State` structure containing:
+
+- X position
+- Y position
+- X velocity
+- Y velocity
+- X acceleration
+- Y acceleration
+
+Several functions were created to separate the basic calculations:
+
+- `calculate_position()`
+- `calculate_velocity()`
+- `calculate_displacement()`
+- `calculate_speed()`
+- `propagate_state()`
+
+`propagate_state()` takes the current spacecraft state and advances it by a specified timestep.
+
+## Simulation
+
+The initial state is:
+
+- Position: `(100, 200)`
+- Velocity: `(10, 5)`
+- Acceleration: `(2, 1)`
+
+The simulation propagates the spacecraft in one-second increments for ten seconds.
+
+At each timestep the program reports:
+
+- Position
+- Total displacement from the initial position
+- Velocity
+- Speed
+- Acceleration
 
 ## What I Learned
 
-- How C++ functions differ from Python functions
-- ...
-- ...
+This iteration introduced the basic structure of a state-propagation problem.
 
-## Next Steps
+The main design lesson was separating individual physics calculations into functions instead of placing all calculations directly inside `main()`.
 
-Implement vector operations and begin separating physics calculations
-from the main simulation loop.
+This also established the idea that a spacecraft's condition can be represented as a collection of state variables that are repeatedly propagated forward in time.
+
+## Limitations
+
+This is a deliberately simple model.
+
+- Acceleration is constant.
+- Gravity is not modeled.
+- There is no numerical integration method yet.
+- There are no orbital mechanics calculations.
+- All code exists in a single source file.
+- There is no automated validation.
+
+These limitations are intentional and provide the starting point for later iterations.
+
+## Next Step
+
+The next iteration will introduce vector-based representations of position, velocity, and acceleration so that the simulation more closely resembles the mathematical representation used in orbital mechanics.
