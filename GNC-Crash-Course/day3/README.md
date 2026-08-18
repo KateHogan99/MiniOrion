@@ -33,14 +33,14 @@ The simulation uses the standard two-body point-mass gravitational model.
 The gravitational acceleration is:
 
 $$
-\mathbf{a}_g =
--\frac{\mu}{r^3}\mathbf{r}
+\vec{a}_g =
+-\frac{\mu}{r^3}\vec{r}
 $$
 
 where:
 
-- $\mathbf{r}$ is the spacecraft position vector
-- $r = |\mathbf{r}|$ is the spacecraft's distance from the central body
+- $\vec{r}$ is the spacecraft position vector
+- $r = |\vec{r}|$ is the spacecraft's distance from the central body
 - $\mu$ is the gravitational parameter
 
 The implementation calculates the spacecraft's current radius and uses it to determine the acceleration at that location.
@@ -64,7 +64,7 @@ The model also allows an externally specified thrust acceleration.
 The total acceleration is calculated as:
 
 $$
-\mathbf{a}_{total}=\mathbf{a}_{gravity}+\mathbf{a}_{thrust}
+\vec{a}_{total}=\vec{a}_{gravity}+\vec{a}_{thrust}
 $$
 
 This establishes the basic structure needed for future powered-flight simulations.
@@ -134,7 +134,7 @@ This iteration changed the problem from simple kinematics into a dynamical simul
 Acceleration is now a function of the spacecraft's current state:
 
 $$
-\mathbf{a} = f(\mathbf{r}, \mathbf{v}, t)
+\vec{a} = f(\vec{r}, \vec{v}, t)
 $$
 
 This is an important conceptual transition because future numerical integration methods will need to evaluate the dynamics repeatedly as the spacecraft moves through the simulation.
