@@ -28,7 +28,7 @@ Instead of treating the x and y components as separate physical quantities throu
 The spacecraft state can therefore be represented conceptually as:
 
 $$
-\mathbf{r} =
+\vec{r} =
 \begin{bmatrix}
 x \\
 y
@@ -36,7 +36,7 @@ y
 $$
 
 $$
-\mathbf{v} =
+\vec{v} =
 \begin{bmatrix}
 v_x \\
 v_y
@@ -44,7 +44,7 @@ v_y
 $$
 
 $$
-\mathbf{a} =
+\vec{a} =
 \begin{bmatrix}
 a_x \\
 a_y
@@ -54,11 +54,11 @@ $$
 The state is then propagated using the constant-acceleration equations:
 
 $$
-\mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}_0t + \frac{1}{2}\mathbf{a}t^2
+\vec{r}(t) = \vec{r}_0 + \vec{v}_0t + \frac{1}{2}\vec{a}t^2
 $$
 
 $$
-\mathbf{v}(t) = \mathbf{v}_0 + \mathbf{a}t
+\vec{v}(t) = \vec{v}_0 + \vec{a}t
 $$
 
 ---
@@ -72,13 +72,13 @@ I implemented several basic vector operations.
 For two vectors:
 
 $$
-\mathbf{a} =
+\vec{a} =
 \begin{bmatrix}
 a_x \\
 a_y
 \end{bmatrix}
 ,\qquad
-\mathbf{b} =
+\vec{b} =
 \begin{bmatrix}
 b_x \\
 b_y
@@ -88,7 +88,7 @@ $$
 their sum is:
 
 $$
-\mathbf{a} + \mathbf{b} =
+\vec{a} + \vec{b} =
 \begin{bmatrix}
 a_x+b_x \\
 a_y+b_y
@@ -100,7 +100,7 @@ This is used throughout the simulation to combine position, velocity, and accele
 ### Vector Subtraction
 
 $$
-\mathbf{a} - \mathbf{b} =
+\vec{a} - \vec{b} =
 \begin{bmatrix}
 a_x-b_x \\
 a_y-b_y
@@ -114,7 +114,7 @@ This is used to determine the displacement vector between two positions.
 A vector can be multiplied by a scalar:
 
 $$
-c\mathbf{a} =
+c\vec{a} =
 \begin{bmatrix}
 ca_x \\
 ca_y
@@ -128,7 +128,7 @@ This allows quantities such as velocity multiplied by time or acceleration multi
 The magnitude of a two-dimensional vector is:
 
 $$
-|\mathbf{a}|=\sqrt{a_x^2+a_y^2}
+|\vec{a}|=\sqrt{a_x^2+a_y^2}
 $$
 
 This is used to calculate quantities such as:
@@ -144,13 +144,13 @@ This is used to calculate quantities such as:
 The displacement between two positions is calculated by first finding the displacement vector:
 
 $$
-\Delta\mathbf{r} = \mathbf{r}_f - \mathbf{r}_i
+\Delta\vec{r} = \vec{r}_f - \vec{r}_i
 $$
 
 and then calculating its magnitude:
 
 $$
-|\Delta\mathbf{r}| = \sqrt{(\Delta x)^2 + (\Delta y)^2}
+|\Delta\vec{r}| = \sqrt{(\Delta x)^2 + (\Delta y)^2}
 $$
 
 This differs from distance traveled. Displacement measures the straight-line separation between the initial and final positions.
@@ -292,7 +292,7 @@ Day 3 will introduce gravitational acceleration and begin transforming the kinem
 The next major physics model will be point-mass gravitational acceleration:
 
 $$
-\mathbf{a}_g = -\frac{\mu}{r^3}\vec{r}
+\vec{a}_g = -\frac{\mu}{r^3}\vec{r}
 $$
 
 where:
