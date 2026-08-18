@@ -40,8 +40,7 @@ where:
 The derivative of the state is:
 
 $$
-\dot{\mathbf{x}}
-=
+\dot{\mathbf{x}} =
 \begin{bmatrix}
 \mathbf{v} \\
 \mathbf{a}
