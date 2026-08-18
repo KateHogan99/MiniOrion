@@ -88,8 +88,7 @@ $$
 their sum is:
 
 $$
-\mathbf{a}+\mathbf{b}
-=
+\mathbf{a} + \mathbf{b} =
 \begin{bmatrix}
 a_x+b_x \\
 a_y+b_y
