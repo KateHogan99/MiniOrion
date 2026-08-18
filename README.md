@@ -503,3 +503,118 @@ Checking whether trajectories behave as expected for:
 - Hyperbolic / escape trajectories
 
 As the project develops, I intend to make these tests increasingly quantitative.
+
+# Why the Project Is 2D
+
+The current project deliberately uses two-dimensional motion.
+
+This keeps the mathematical and software complexity manageable while I learn the underlying concepts.
+
+A three-dimensional implementation introduces additional considerations including:
+
+- 3D vector mathematics
+- Reference frames
+- Coordinate transformations
+- Orbital plane geometry
+- 3D visualization
+- Attitude-related concepts
+
+The long-term goal is to understand these concepts, but adding a 3D visualization simply for appearance would not necessarily make the GNC simulation more meaningful.
+
+I am therefore prioritizing correct and well-understood dynamics and GNC concepts over visual complexity.
+
+A 3D extension may be considered after the core two-dimensional system is complete.
+
+---
+
+# What I Am Trying to Demonstrate
+
+This project is intended to demonstrate more than the ability to produce working C++ code.
+
+In particular, I want the finished project to demonstrate that I can:
+
+- Teach myself an unfamiliar technical subject.
+- Translate mathematical equations into software.
+- Learn and apply C++ incrementally.
+- Work with numerical methods.
+- Build and analyze physical simulations.
+- Identify limitations in my own implementation.
+- Validate numerical results independently.
+- Refactor code as requirements become more complex.
+- Document technical decisions.
+- Investigate problems rather than hiding them.
+- Build toward a larger engineering system incrementally.
+
+The progression itself is part of the project.
+
+---
+
+# Current Limitations
+
+MiniOrion is an educational and portfolio project, not flight software.
+
+The current implementation does not model many aspects of a real spacecraft system, including:
+
+- Three-dimensional dynamics
+- Spacecraft attitude
+- Rotational dynamics
+- Reaction wheels or control moment gyroscopes
+- Realistic propulsion hardware
+- Mass depletion
+- Atmospheric drag
+- J2 perturbations
+- Third-body gravity
+- Solar radiation pressure
+- Real navigation sensors
+- Kalman filtering
+- Flight computers
+- Fault management
+- Real-time constraints
+- Hardware interfaces
+
+These may be appropriate topics for future learning, but they are outside the current scope unless they directly support the project's final goals.
+
+---
+
+# Portfolio Goal
+
+The intended final product is a small, self-contained GNC simulation that can be shown during a technical interview.
+
+The final repository should allow someone unfamiliar with the project to understand:
+
+1. What problem the software is solving.
+2. What physics it models.
+3. How the numerical propagation works.
+4. How the simulation is validated.
+5. How guidance and control interact with the dynamics.
+6. What assumptions and limitations exist.
+7. Why particular implementation decisions were made.
+
+The final project should be understandable enough that I can explain the architecture and mathematics during an interview rather than simply demonstrating that the program runs.
+
+---
+
+# Feedback Welcome
+
+This project is being developed publicly as a learning exercise.
+
+Feedback is particularly useful regarding:
+
+- C++ design
+- Numerical methods
+- Orbital mechanics
+- GNC architecture
+- Validation methodology
+- Software organization
+- Engineering practices
+- Areas where my assumptions or implementation are incorrect
+
+I am especially interested in feedback that identifies weaknesses or technically questionable decisions. The purpose of the project is to improve my understanding, not simply to produce a predetermined result.
+
+---
+
+# Project Status
+
+Mini-Orion is an active work in progress.
+
+The current implementation represents approximately the first half of the planned learning progression. The repository will continue to evolve as new concepts are learned, implemented, tested, and documented.
