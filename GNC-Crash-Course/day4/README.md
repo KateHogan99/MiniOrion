@@ -29,7 +29,9 @@ This iteration introduces the first numerical integrator: Euler's method.
 The spacecraft state is represented as:
 
 $$
-\mathbf{x} = \begin{bmatrix} \mathbf{r} \\ \mathbf{v} \end{bmatrix}
+\mathbf{x} = 
+\begin{bmatrix} \mathbf{r} \\ 
+\mathbf{v} \end{bmatrix}
 $$
 
 where:
