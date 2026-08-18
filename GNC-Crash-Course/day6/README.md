@@ -164,7 +164,25 @@ where:
 - $r$ is the magnitude of the position vector.
 - $\mu$ is the gravitational parameter.
 
+The total acceleration currently consists of:
+
+$$
+\vec{a}_{total} = \vec{a}_{gravity} + \vec{a}_{thrust}
+$$
+
 #### Why this matters
+
+Separating dynamics from integration is an important architectural decision.
+
+The dynamics model answers:
+
+> "What is the spacecraft's acceleration at this state?"
+
+The integrator answers:
+
+> "Given that derivative, how should the state be advanced through time?"
+
+Keeping those responsibilities separate will make it easier to introduce additional force models later.
 
 ### `Integrator`
 
