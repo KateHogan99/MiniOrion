@@ -150,12 +150,7 @@ $$
 and then calculating its magnitude:
 
 $$
-|\Delta\mathbf{r}|
-=
-\sqrt{
-(\Delta x)^2+
-(\Delta y)^2
-}
+|\Delta\mathbf{r}| = \sqrt{(\Delta x)^2 + (\Delta y)^2}
 $$
 
 This differs from distance traveled. Displacement measures the straight-line separation between the initial and final positions.
