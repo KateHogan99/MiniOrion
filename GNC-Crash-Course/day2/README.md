@@ -54,21 +54,11 @@ $$
 The state is then propagated using the constant-acceleration equations:
 
 $$
-\mathbf{r}(t)
-=
-\mathbf{r}_0
-+
-\mathbf{v}_0t
-+
-\frac{1}{2}\mathbf{a}t^2
+\mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}_0t + \frac{1}{2}\mathbf{a}t^2
 $$
 
 $$
-\mathbf{v}(t)
-=
-\mathbf{v}_0
-+
-\mathbf{a}t
+\mathbf{v}(t) = \mathbf{v}_0 + \mathbf{a}t
 $$
 
 ---
