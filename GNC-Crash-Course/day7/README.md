@@ -1,32 +1,33 @@
-# Day 6 — Modular C++ Architecture
+# Day 7 — Numerical Validation
 
 ## Objective
 
-## From Single-File Program to Modular Project
+## Why Validation Matters
 
-## Project Structure
+## Validation Philosophy
 
-## Module Responsibilities
+## Test Cases
 
-### Types
-### Vector Mathematics
-### Orbital Mechanics
-### Numerical Integration
-### Simulation
+### Constant Acceleration
+### Circular Orbit
+### Orbital Energy Conservation
+### Angular Momentum Conservation
+### Elliptical Orbit
+### Escape Trajectory
 
-## Data Flow
+## Tolerance Strategy
 
-## What Changed From Day 5
+## Absolute vs Relative Error
 
-## C++ Concepts Learned
+## Validation Architecture
 
-## Engineering Concepts Learned
+## PASS / FAIL / N/A Behavior
+
+## Example Results
+
+## What I Learned
 
 ## Problems Encountered
-
-## Design Decisions
-
-## Testing
 
 ## Limitations
 
