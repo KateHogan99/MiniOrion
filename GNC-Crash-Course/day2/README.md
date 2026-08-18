@@ -28,25 +28,47 @@ Instead of treating the x and y components as separate physical quantities throu
 The spacecraft state can therefore be represented conceptually as:
 
 $$
-\mathbf{r} = \begin{bmatrix}x \\ y\end{bmatrix}
+\mathbf{r} =
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
 $$
 
 $$
-\mathbf{v} = \begin{bmatrix}v_x \\ v_y\end{bmatrix}
+\mathbf{v} =
+\begin{bmatrix}
+v_x \\
+v_y
+\end{bmatrix}
 $$
 
 $$
-\mathbf{a} = \begin{bmatrix}a_x \\ a_y\end{bmatrix}
+\mathbf{a} =
+\begin{bmatrix}
+a_x \\
+a_y
+\end{bmatrix}
 $$
 
 The state is then propagated using the constant-acceleration equations:
 
 $$
-\mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}_0t + \frac{1}{2}\mathbf{a}t^2
+\mathbf{r}(t)
+=
+\mathbf{r}_0
++
+\mathbf{v}_0t
++
+\frac{1}{2}\mathbf{a}t^2
 $$
 
 $$
-\mathbf{v}(t) = \mathbf{v}_0 + \mathbf{a}t
+\mathbf{v}(t)
+=
+\mathbf{v}_0
++
+\mathbf{a}t
 $$
 
 ---
@@ -60,13 +82,28 @@ I implemented several basic vector operations.
 For two vectors:
 
 $$
-\mathbf{a} = \begin{bmatrix}a_x\\a_y\end{bmatrix},\qquad\mathbf{b} =\begin{bmatrix}b_x\\b_y\end{bmatrix}
+\mathbf{a} =
+\begin{bmatrix}
+a_x \\
+a_y
+\end{bmatrix}
+,\qquad
+\mathbf{b} =
+\begin{bmatrix}
+b_x \\
+b_y
+\end{bmatrix}
 $$
 
 their sum is:
 
 $$
-\mathbf{a} + \mathbf{b} = \begin{bmatrix}a_x + b_x\\a_y + b_y\end{bmatrix}
+\mathbf{a}+\mathbf{b}
+=
+\begin{bmatrix}
+a_x+b_x \\
+a_y+b_y
+\end{bmatrix}
 $$
 
 This is used throughout the simulation to combine position, velocity, and acceleration contributions.
