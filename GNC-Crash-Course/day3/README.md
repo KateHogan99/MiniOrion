@@ -1,3 +1,4 @@
+
 # Day 3 — Gravitational Dynamics
 
 ## Objective
@@ -32,7 +33,7 @@ The simulation uses the standard two-body point-mass gravitational model.
 The gravitational acceleration is:
 
 $$
-\mathbf{a}\_g =
+\mathbf{a}_g =
 -\frac{\mu}{r^3}\mathbf{r}
 $$
 
@@ -63,11 +64,7 @@ The model also allows an externally specified thrust acceleration.
 The total acceleration is calculated as:
 
 $$
-\mathbf{a}\_{"total"}
-=
-\mathbf{a}\_{"gravity"}
-+
-\mathbf{a}\_{"thrust"}
+\mathbf{a}_{total}=\mathbf{a}_{gravity}+\mathbf{a}_{thrust}
 $$
 
 This establishes the basic structure needed for future powered-flight simulations.
