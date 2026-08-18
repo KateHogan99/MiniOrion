@@ -76,7 +76,7 @@ The important architectural idea is that each module has a relatively narrow res
 
 ## Module Responsibilities
 
-### Vector2D
+### 2D Vector
 
 #### Files
 
@@ -113,7 +113,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 - `State.h`
 
-The `State` module defines the mathematical representation of the spacecraft's translational state.
+The State module defines the mathematical representation of the spacecraft's translational state.
 
 A spacecraft state consists of:
 
@@ -224,13 +224,13 @@ $$
 
 #### Why this matters
 
-The separation between `Dynamics` and `Integrator` is particularly important for future development.
+The separation between Dynamics and Integrator is particularly important for future development.
 
 The numerical integrator does not need to know the details of why an acceleration exists. It only needs the state derivative.
 
 This makes it possible to improve or replace the dynamics model without rewriting the integration algorithm.
 
-### OrbitalMechanics
+### Orbital Mechanics
 
 #### Files
 
@@ -315,11 +315,11 @@ The module also provides functions responsible for:
 
 #### Why this matters
 
-The `Simulation` module acts as the bridge between the underlying physics and the higher-level program.
+The Simulation module acts as the bridge between the underlying physics and the higher-level program.
 
 Rather than having `main.cpp` perform the actual simulation work, `main.cpp` now primarily coordinates the major components.
 
-### TestCases
+### Test Cases
 
 #### Files
 
