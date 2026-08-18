@@ -292,13 +292,13 @@ Day 3 will introduce gravitational acceleration and begin transforming the kinem
 The next major physics model will be point-mass gravitational acceleration:
 
 $$
-\mathbf{a}_g = -\frac{\mu}{r^3}\mathbf{r}
+\mathbf{a}_g = -\frac{\mu}{r^3}\vec{r}
 $$
 
 where:
 
 - $\mu$ is the gravitational parameter
-- $\mathbf{r}$ is the spacecraft position vector
-- $r=|\mathbf{r}|$
+- $\vec{r}$ is the spacecraft position vector
+- $r=|\vec{r}|$
 
 This will allow the simulation to model trajectories produced by gravity rather than only prescribed constant acceleration.
