@@ -272,11 +272,52 @@ They will also become important inputs to the validation framework in later iter
 - `Simulation.h`
 - `Simulation.cpp`
 
+The Simulation module acts as the central coordinator for the spacecraft propagation process.
 
+It defines two important data structures.
+
+##### `SimulationConfig`
+
+This contains the parameters required to configure a simulation, including:
+
+- Fravitational parameter
+- Initial position
+- Initial velocity
+- Thrust acceleration
+- Timestep
+- Number of timesteps
+- Numerical integration method
+
+##### `SimulationStep`
+
+This stores the results associated with an individual simulation timestep.
+
+It includes:
+
+- Simulation time
+- Spacecraft state
+- Gravity acceleration
+- Thrust acceleration
+- Total acceleration
+- Radius
+- Speed
+- Specific orbital energy
+- Specific angular momentum
+- Distance traveled during the timestep
+- Total accumulated distance
+
+The module also provides functions responsible for:
+
+- Propagating a state
+- Calculating displacement
+- Calculating the diagnostic information associated with a simulation step
+- Running the complete simulation
 
 #### Why this matters
 
+The `Simulation` module acts as the bridge between the underlying physics and the higher-level program.
 
+Rather than having `main.cpp` perform the actual simulation work, `main.cpp` now primarily coordinates the major components.
 
 ### `TestCases`
 
@@ -285,11 +326,21 @@ They will also become important inputs to the validation framework in later iter
 - `TestCases.h`
 - `TestCases.cpp`
 
+The TestCases module provides predefined simulation configurations.
 
+Current test cases include:
+
+- No gravity
+- Gravity only
+- Circular orbit
+
+Each test case returns a `SimulationConfig` containing the appropriate initial conditions and simulation parameters.
 
 #### Why this matters
 
+Separating test-case creation from the simulation engine means that new scenarios can be added without modifying the underlying propagation code.
 
+This will become increasingly useful as the project develops more sophisticated validation scenarios.
 
 ### `Validation`
 
@@ -298,11 +349,35 @@ They will also become important inputs to the validation framework in later iter
 - `Validation.h`
 - `Validation.cpp`
 
+The Validation module evaluates whether the numerical simulation behaves as expected.
 
+The module currently includes:
+
+- An analytical constant-acceleration solution
+- Constant-acceleration validation
+- A higher-level simulation validation function
+
+The analytical solution provides an independent reference for cases where the exact solution is known:
+
+$$
+r\left(t\right) = r_0 +v_0t + \frac{1}{2}at^2
+$$
+
+and
+
+$$
+v\left(t\right) = v_0 + at
+$$
+
+The numerical simulation can then be compared against this known solution.
 
 #### Why this matters
 
+A numerical simulation should not be considered trustworthy simply because the trajectory looks reasonable.
 
+The validation framework provides a way to quantitatively evaluate the numerical solution against known physical or analytical expectations.
+
+This will be expanded substantially in later iterations.
 
 ### `Output`
 
@@ -311,6 +386,22 @@ They will also become important inputs to the validation framework in later iter
 - `Output.h`
 - `Output.cpp`
 
+The Output module is responsible for displaying simulation results.
 
+It provides functions for:
+
+Converting the integrator enumeration into a readable name
+Printing the timestep results
+Printing a simulation summary
+
+Moving output formatting out of the simulation engine prevents `Simulation.cpp` from becoming responsible for both computation and presentation.
 
 #### Why this matters
+
+This is another example of separation of concerns.
+
+The simulation should calculate results.
+
+The output module should decide how those results are presented to the user.
+
+This will make it easier to eventually replace console output with other forms of data visualization or file output.
