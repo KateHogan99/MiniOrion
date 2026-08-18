@@ -1,36 +1,43 @@
-# Day 2 — Vector and State Abstractions
+# Day 2 — Vector-Based State Representation
 
-## Objective
+## Overview
 
-Refactor the Day 1 kinematics simulation to represent physical quantities using 2D vectors rather than separate X and Y variables.
+Day 2 refactors the basic kinematics model from Day 1 into a vector-based representation.
 
-The goal was to make the code more closely resemble the mathematical representation of spacecraft motion while reducing repeated component-by-component calculations.
+Instead of storing position, velocity, and acceleration as separate scalar X/Y values, the simulation now represents them using a reusable `Vector2D` structure.
 
-## Concepts Studied
+This is an important step toward the mathematical representation used in orbital mechanics and spacecraft simulation, where position, velocity, and acceleration are naturally treated as vectors.
 
-### Physics
+---
 
-- 2D vectors
-- Vector addition and subtraction
-- Vector scaling
-- Vector magnitude
-- Displacement as a vector difference
-- Position and velocity as vector quantities
+## Goals
 
-### C++
+The goals for Day 2 were to:
 
-- Structures containing other structures
-- Passing structures to functions
-- Returning structures from functions
-- Breaking calculations into reusable functions
+- Replace separate X/Y quantities with a reusable `Vector2D` structure.
+- Represent spacecraft position, velocity, and acceleration as vectors.
+- Create reusable vector operations.
+- Use vector operations to simplify the kinematic equations.
+- Continue practicing C++ structs, functions, and return values.
+- Maintain the same constant-acceleration physics introduced on Day 1.
 
-## Implementation
+---
 
-A `Vector2D` structure was introduced:
+## What I Learned
+
+### 1. Vector Representation
+
+The Day 1 state stored every component independently:
 
 ```cpp
-struct Vector2D
+struct State
 {
     double x;
     double y;
+
+    double vx;
+    double vy;
+
+    double ax;
+    double ay;
 };
