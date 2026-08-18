@@ -292,9 +292,7 @@ Day 3 will introduce gravitational acceleration and begin transforming the kinem
 The next major physics model will be point-mass gravitational acceleration:
 
 $$
-\mathbf{a}_g
-=
--\frac{\mu}{r^3}\mathbf{r}
+\mathbf{a}_g = -\frac{\mu}{r^3}\mathbf{r}
 $$
 
 where:
