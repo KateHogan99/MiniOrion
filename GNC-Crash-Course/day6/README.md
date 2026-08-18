@@ -78,7 +78,7 @@ The important architectural idea is that each module has a relatively narrow res
 
 ### `Vector2D`
 
-#### Files:
+#### Files
 
 - `Vector2D.h`
 - `Vecror2D.cpp`
@@ -109,17 +109,36 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `State`
 
-#### Files:
+#### Files
 
 - `State.h`
 
+The `State` module defines the mathematical representation of the spacecraft's translational state.
 
+A spacecraft state consists of:
+
+- Position
+- Velocity
+
+The module also defines `StateDerivative`, which represents the time derivatives of those quantities:
+
+- Position derivative
+- Velocity derivative
+
+For this simulation:
+
+- The derivative of position is velocity.
+- The derivative of velocity is acceleration.
 
 #### Why this matters
 
+The state representation provides the common interface used by the numerical integrators and dynamics model.
+
+This also begins to resemble the mathematical structure used in real numerical simulation and GNC systems, where a system is represented as a state vector and propagated according to its equations of motion.
+
 ### `Dynamics`
 
-#### Files:
+#### Files
 
 - `Dynamics.h`
 - `Dynamics.cpp`
@@ -130,7 +149,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `Integrator`
 
-#### Files:
+#### Files
 
 - `Integrator.h`
 - `Integrator.cpp`
@@ -141,7 +160,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `OrbitalMechanics`
 
-#### Files:
+#### Files
 
 - `OrbitalMechanics.h`
 - `OrbitalMechanics.cpp`
@@ -152,7 +171,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `Simulation`
 
-#### Files:
+#### Files
 
 - `Simulation.h`
 - `Simulation.cpp`
@@ -163,7 +182,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `TestCases`
 
-#### Files:
+#### Files
 
 - `TestCases.h`
 - `TestCases.cpp`
@@ -174,7 +193,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `Validation`
 
-#### Files:
+#### Files
 
 - `Validation.h`
 - `Validation.cpp`
@@ -185,7 +204,7 @@ Centralizing these operations reduces duplicated code and makes the rest of the 
 
 ### `Output`
 
-#### Files:
+#### Files
 
 - `Output.h`
 - `Output.cpp`
