@@ -69,3 +69,127 @@ Simulation
     |
     +----> Validation
 ```
+
+The exact dependency structure is implemented through the header files and source files in this directory.
+
+The important architectural idea is that each module has a relatively narrow responsibility.
+
+## Module Responsibilities
+
+### `Vector2D`
+
+#### Files:
+
+- `Vector2D.h`
+- `Vecror2D.cpp`
+
+This module provides the basic two-dimensional vector operations used throughout the simulator.
+
+It contains functions for:
+
+- Vector addition
+- Vector subtraction
+- Vector scaling
+- Vector magnitude
+
+This creates a common mathematical interface that other modules can use instead of repeatedly implementing vector arithmetic.
+
+#### Why this matters
+
+Vector operations appear throughout the simulation, including:
+
+- Position propagation
+- Velocity propagation
+- Gravity calculations
+- Acceleration calculations
+- Distance calculations
+- Orbital mechanics calculations
+
+Centralizing these operations reduces duplicated code and makes the rest of the simulator easier to read.
+
+### `State`
+
+#### Files:
+
+- `State.h`
+
+
+
+#### Why this matters
+
+### `Dynamics`
+
+#### Files:
+
+- `Dynamics.h`
+- `Dynamics.cpp`
+
+
+
+#### Why this matters
+
+### `Integrator`
+
+#### Files:
+
+- `Integrator.h`
+- `Integrator.cpp`
+
+
+
+#### Why this matters
+
+### `OrbitalMechanics`
+
+#### Files:
+
+- `OrbitalMechanics.h`
+- `OrbitalMechanics.cpp`
+
+
+
+#### Why this matters
+
+### `Simulation`
+
+#### Files:
+
+- `Simulation.h`
+- `Simulation.cpp`
+
+
+
+#### Why this matters
+
+### `TestCases`
+
+#### Files:
+
+- `TestCases.h`
+- `TestCases.cpp`
+
+
+
+#### Why this matters
+
+### `Validation`
+
+#### Files:
+
+- `Validation.h`
+- `Validation.cpp`
+
+
+
+#### Why this matters
+
+### `Output`
+
+#### Files:
+
+- `Output.h`
+- `Output.cpp`
+
+
+
+#### Why this matters
