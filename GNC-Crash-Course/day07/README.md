@@ -217,7 +217,7 @@ The central validation process calls each individual check and reports its resul
 Day 7 introduces a reusable relative-error calculation:
 
 $$
-\text{Relative Error \(\%\)} = \left\lvert \frac{x - x_{ref}}{x_{ref}} \right\rvert \times 100
+\text{Relative Error \left(\%\right)} = \left\lvert \frac{x - x_{ref}}{x_{ref}} \right\rvert \times 100
 $$
 
 where:
