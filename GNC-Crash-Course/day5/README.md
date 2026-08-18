@@ -52,11 +52,7 @@ where acceleration is determined by the dynamics model.
 For the current two-body model with optional thrust:
 
 $$
-\mathbf{a}
-=
-\mathbf{a}_{gravity}
-+
-\mathbf{a}_{thrust}
+\mathbf{a} = \mathbf{a}_{gravity} + \mathbf{a}_{thrust}
 $$
 
 ---
@@ -92,31 +88,19 @@ The first numerical integrator implemented in this iteration is the forward Eule
 For a general state:
 
 $$
-\mathbf{x}_{n+1}
-=
-\mathbf{x}_n
-+
-\dot{\mathbf{x}}_n\Delta t
+\mathbf{x}_{n+1} = \mathbf{x}_n + \dot{\mathbf{x}}_n\Delta t
 $$
 
 For position:
 
 $$
-\mathbf{r}_{n+1}
-=
-\mathbf{r}_n
-+
-\mathbf{v}_n\Delta t
+\mathbf{r}_{n+1} = \mathbf{r}_n + \mathbf{v}_n\Delta t
 $$
 
 For velocity:
 
 $$
-\mathbf{v}_{n+1}
-=
-\mathbf{v}_n
-+
-\mathbf{a}_n\Delta t
+\mathbf{v}_{n+1} = \mathbf{v}_n + \mathbf{a}_n\Delta t
 $$
 
 Euler integration is simple and computationally inexpensive, but its accuracy is limited.
