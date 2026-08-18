@@ -141,13 +141,7 @@ $$
 The final state is calculated using the weighted combination:
 
 $$
-x_{n+1}
-=
-x_n+
-\frac{\Delta t}{6}
-\left(
-k_1+2k_2+2k_3+k_4
-\right)
+x_{n+1} = x_n + \frac{\Delta t}{6}\left(k_1 + 2k_2 + 2k_3 + k_4\right)
 $$
 
 The four evaluations allow RK4 to obtain a much better approximation of the changing dynamics within the timestep than forward Euler.
