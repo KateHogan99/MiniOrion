@@ -100,8 +100,7 @@ This is used throughout the simulation to combine position, velocity, and accele
 ### Vector Subtraction
 
 $$
-\mathbf{a}-\mathbf{b}
-=
+\mathbf{a} - \mathbf{b} =
 \begin{bmatrix}
 a_x-b_x \\
 a_y-b_y
@@ -115,8 +114,7 @@ This is used to determine the displacement vector between two positions.
 A vector can be multiplied by a scalar:
 
 $$
-c\mathbf{a}
-=
+c\mathbf{a} =
 \begin{bmatrix}
 ca_x \\
 ca_y
@@ -130,9 +128,7 @@ This allows quantities such as velocity multiplied by time or acceleration multi
 The magnitude of a two-dimensional vector is:
 
 $$
-|\mathbf{a}|
-=
-\sqrt{a_x^2+a_y^2}
+|\mathbf{a}| = \sqrt{a_x^2+a_y^2}
 $$
 
 This is used to calculate quantities such as:
@@ -148,9 +144,7 @@ This is used to calculate quantities such as:
 The displacement between two positions is calculated by first finding the displacement vector:
 
 $$
-\Delta\mathbf{r}
-=
-\mathbf{r}_f-\mathbf{r}_i
+\Delta\mathbf{r} = \mathbf{r}_f - \mathbf{r}_i
 $$
 
 and then calculating its magnitude:
