@@ -42,7 +42,9 @@ where:
 The derivative of the state is:
 
 $$
-\dot{\mathbf{x}} = \begin{bmatrix} \mathbf{v} \\ \mathbf{a} \end{bmatrix}
+\dot{\mathbf{x}} = 
+\begin{bmatrix} \mathbf{v} \\ 
+\mathbf{a} \end{bmatrix}
 $$
 
 A `StateDerivative` structure was introduced to represent this explicitly.
