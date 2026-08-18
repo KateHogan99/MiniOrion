@@ -143,7 +143,26 @@ This also begins to resemble the mathematical structure used in real numerical s
 - `Dynamics.h`
 - `Dynamics.cpp`
 
+The Dynamics module calculates the forces/accelerations acting on the spacecraft.
 
+Currently, the primary environmental model is central-body point-mass gravity.
+
+The module provides functions for:
+
+- Calculating gravitational acceleration
+- Calculating the derivative of the spacecraft state
+
+The gravitational acceleration follows the two-body point-mass model:
+
+$$$
+\vec{a}_{gravity} = -\frac{\mu}{r^3}\vec{r}
+$$$
+
+where:
+
+- $\vec{r}$ is the spacecraft position vector.
+- $r$ is the magnitude of the position vector.
+- $\mu$ is the gravitational parameter.
 
 #### Why this matters
 
