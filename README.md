@@ -163,3 +163,100 @@ The intended system will eventually contain components representing:
                                     │
                                     ▼
                                 Guidance
+```
+
+The exact architecture will evolve as I learn more.
+
+The final system is intended to demonstrate concepts rather than simulate a flight-qualified spacecraft.
+
+---
+
+# Current Scope
+
+The project currently uses a simplified two-dimensional model.
+
+The current simulation includes concepts such as:
+
+- Two-dimensional position and velocity
+- Point-mass gravitational dynamics
+- Prescribed thrust acceleration
+- State derivatives
+- Numerical propagation
+- Euler integration
+- RK4 integration
+- Circular orbits
+- Elliptical trajectories
+- Escape trajectories
+- Specific orbital energy
+- Specific angular momentum
+- Numerical validation
+- Configurable simulation scenarios
+
+The project is currently focused on building a reliable dynamics and propagation foundation before adding higher-level GNC functionality.
+
+---
+
+# Development Philosophy
+
+Mini-Orion is being developed as a learning project rather than as a demonstration of pre-existing expertise.
+
+Each iteration has a specific technical objective.
+
+The progression is intentional:
+
+```text
+Basic C++ / Kinematics
+        ↓
+Vector Mathematics
+        ↓
+Gravity
+        ↓
+State Derivatives
+        ↓
+Numerical Integration
+        ↓
+Orbital Analysis
+        ↓
+Modular Architecture
+        ↓
+Numerical Validation
+        ↓
+Improved Simulation
+        ↓
+Guidance
+        ↓
+Control
+        ↓
+Integrated GNC Demonstration
+```
+
+The project is designed so that earlier iterations remain available as a record of that progression.
+
+---
+
+# Development Status
+
+## Current Iteration: 7 / 12
+
+The project has progressed from a single-file kinematics demonstration to a modular two-dimensional orbital simulation with numerical integration and independent validation routines.
+
+### Completed
+
+- [x] Basic C++ kinematics
+- [x] Vector-based state representation
+- [x] Two-dimensional gravitational model
+- [x] Spacecraft state representation
+- [x] State derivative formulation
+- [x] Euler integration
+- [x] RK4 integration
+- [x] Simulation result storage
+- [x] Orbital energy calculation
+- [x] Angular momentum calculation
+- [x] Circular orbit test case
+- [x] Elliptical orbit test case
+- [x] Escape trajectory test case
+- [x] Analytical constant-acceleration validation
+- [x] Conservation-based validation
+- [x] Modular C++ project structure
+- [x] Validation framework
+
