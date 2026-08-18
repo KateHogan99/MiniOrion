@@ -28,15 +28,15 @@ Instead of treating the x and y components as separate physical quantities throu
 The spacecraft state can therefore be represented conceptually as:
 
 $$
-\mathbf{r} = \begin{bmatrix}x \\y\end{bmatrix}
+\mathbf{r} = \begin{bmatrix}x \\ y\end{bmatrix}
 $$
 
 $$
-\mathbf{v} = \begin{bmatrix}v_x \\v_y\end{bmatrix}
+\mathbf{v} = \begin{bmatrix}v_x \\ v_y\end{bmatrix}
 $$
 
 $$
-\mathbf{a} = \begin{bmatrix}a_x \\a_y\end{bmatrix}
+\mathbf{a} = \begin{bmatrix}a_x \\ a_y\end{bmatrix}
 $$
 
 The state is then propagated using the constant-acceleration equations:
