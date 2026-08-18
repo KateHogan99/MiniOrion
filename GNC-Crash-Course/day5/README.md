@@ -25,8 +25,7 @@ Day 5 is the first iteration where the simulation has a general numerical propag
 The spacecraft state is represented as:
 
 $$
-\mathbf{x}
-=
+\mathbf{x} =
 \begin{bmatrix}
 \mathbf{r} \\
 \mathbf{v}
