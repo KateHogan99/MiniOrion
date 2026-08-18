@@ -1,0 +1,16 @@
+#ifndef TESTCASES_H
+#define TESTCASES_H
+
+#include "Simulation.h"
+
+SimulationConfig create_no_gravity_test();
+
+SimulationConfig create_gravity_only_test();
+
+SimulationConfig create_circular_orbit_test();
+
+SimulationConfig create_elliptical_orbit_test();
+
+SimulationConfig create_escape_trajectory_test();
+
+#endif
