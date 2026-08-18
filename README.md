@@ -260,3 +260,55 @@ The project has progressed from a single-file kinematics demonstration to a modu
 - [x] Modular C++ project structure
 - [x] Validation framework
 
+### In Progress
+
+- [ ]  Improve validation tolerance handling
+- [ ]  Relative error analysis
+- [ ]  More systematic numerical testing
+- [ ]  Better visualization of simulation results
+- [ ]  Improved project documentation
+- [ ]  Additional orbital mechanics functionality
+
+### Planned
+
+- [ ]  More rigorous integrator comparison
+- [ ]  Numerical convergence analysis
+- [ ]  Maneuver / Δv modeling
+- [ ]  Guidance logic
+- [ ]  Basic control system
+- [ ]  Navigation / state estimation concepts
+- [ ]  Integrated GNC demonstration
+- [ ]  Final portfolio documentation
+
+This checklist will be updated as the project develops.
+
+---
+
+# Project Structure
+
+The repository is currently organized around two major areas:
+
+```text
+mini-orion/
+│
+├── README.md
+│
+└── GNC-Crash-Course/
+    │
+    ├── day1/
+    ├── day2/
+    ├── day3/
+    ├── day4/
+    ├── day5/
+    ├── day6/
+    ├── day7/
+    ├── day8/
+    ├── day9/
+    ├── day10/
+    ├── day11/
+    └── day12/
+```
+
+The `GNC-Crash-Course` directory documents the project's incremental development.
+
+Each iteration focuses on a specific set of programming, numerical, or GNC concepts.
