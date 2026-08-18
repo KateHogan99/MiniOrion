@@ -1,33 +1,71 @@
-# Day 6 — Modular C++ Architecture
+# Day 6 — Modular Simulation Architecture
 
-## Objective
+## Overview
 
-## From Single-File Program to Modular Project
+Day 6 is the first major architectural refactoring of the MiniOrion project.
 
-## Project Structure
+The earlier iterations developed the mathematical and numerical foundations of the simulator in a single `main.cpp` file. Day 6 reorganizes those capabilities into separate modules with `.h` header files and corresponding `.cpp` implementation files.
 
-## Module Responsibilities
+The goal of this iteration was not to introduce a large amount of new physics. Instead, the focus was on software architecture, separation of responsibilities, reusable interfaces, and preparing the simulator for continued development.
 
-### Types
-### Vector Mathematics
-### Orbital Mechanics
-### Numerical Integration
-### Simulation
+The result is a small modular spacecraft simulation framework in which the major components of the simulation are separated into independent modules.
 
-## Data Flow
+## Goals
 
-## What Changed From Day 5
+### Primary Goals
 
-## C++ Concepts Learned
+- Refactor the simulation from a single source file into multiple modules.
+- Separate physics calculations from numerical integration.
+- Separate simulation management from orbital mechanics calculations.
+- Create reusable data structures for spacecraft state and vectors.
+- Separate test-case configuration from the simulation itself.
+- Separate output formatting from simulation logic.
+- Create a dedicated validation module.
+- Establish an architecture that can support future iterations without continuing to grow a single `main.cpp`.
 
-## Engineering Concepts Learned
+### C++ Goals
 
-## Problems Encountered
+This iteration also focused on becoming more comfortable with:
 
-## Design Decisions
+- Header files
+- Source files
+- Include guards
+- Function declarations and definitions
+- `enum class`
+- Modular compilation
+- Interfaces between source files
+- Separating data structures from implementation
+- Managing dependencies between modules
 
-## Testing
+## Architecture
 
-## Limitations
+Day 6 divides the simulator into the following major components:
 
-## Next Iteration
+```text
+main.cpp
+    |
+    +------------------+
+    |                  |
+    v                  v
+Simulation          TestCases
+    |
+    +-------------------+
+    |                   |
+    v                   v
+Integrator           Dynamics
+    |                   |
+    |                   v
+    |              Orbital Mechanics
+    |
+    v
+State
+    |
+    v
+Vector2D
+
+Simulation
+    |
+    +----> Output
+    |
+    +----> Validation
+```
