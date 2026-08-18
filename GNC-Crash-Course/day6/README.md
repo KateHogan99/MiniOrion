@@ -440,53 +440,152 @@ $$
 
 ## What Changed from Day 5
 
+Day 5 already contained most of the mathematical functionality used in Day 6, including:
 
+- 2D vector mathematics
+- Central-body gravity
+- State derivatives
+- Euler integration
+- RK4 integration
+- Orbital energy
+- Angular momentum
+- Simulation history
+- Analytical validation
+
+The major change in Day 6 is therefore architectural rather than mathematical.
 
 #### Day 5
 
+The majority of the project existed in one large `main.cpp`.
 
+This made the relationships between the different components difficult to manage as the project grew.
 
 #### Day 6
 
+The functionality was divided into independent modules:
 
+- `Vector2D`
+- `State`
+- `Dynamics`
+- `Integrator`
+- `OrbitalMechanics`
+- `Simulation`
+- `TestCases`
+- `Validation`
+- `Output`
+
+`main.cpp` is now primarily responsible for coordinating those modules.
 
 ## Key Design Decisions
 
 ### Separation of dynamics and integration
 
+The dynamics model determines the derivative of the spacecraft state.
 
+The integrator uses that derivative to propagate the state.
+
+Keeping these independent allows future force models to be introduced without rewriting the numerical integration algorithms.
 
 ### Separation of simulation and output
 
+The simulation produces data.
 
+The output module presents that data.
+
+This avoids coupling the simulation engine to a particular presentation format.
 
 ### Separation of test cases from simulation logic
 
+Predefined scenarios are constructed in `TestCases.cpp` rather than embedded directly in the simulation engine.
 
+This makes it easier to add new scenarios as the validation suite grows.
 
 ### Dedicated validation module
 
+Validation is treated as a separate concern rather than being mixed into the propagation algorithm.
 
+This establishes the beginnings of a more formal verification and validation process.
 
 ## C++ Concepts Practiced
 
+Day 6 introduced or reinforced several important C++ concepts:
 
+- Header/source file organization
+- Include guards
+- Function declarations
+- Function definitions
+- Cross-file dependencies
+- Enumerations with `enum class`
+- Struct-based data models
+- `std::vector`
+- References
+- Modular compilation
+- Separation of interface and implementation
+- Basic software architecture
 
 ## Physics Concepts Practiced
 
+Day 6 consolidates several of the physics concepts developed in previous iterations:
 
+- Two-dimensional translational motion
+- Constant acceleration
+- Newtonian gravity
+- Two-body orbital dynamics
+- Gravitational parameter $\mu$
+- Numerical state propagation
+- Specific orbital energy
+- Specific angular momentum
+- Circular orbital velocity
+- Conservation laws as validation tools
 
 ## Limitations
 
+Day 6 is intentionally still a simplified simulation.
 
+Current limitations include:
+
+- 2D motion only
+- Point-mass gravity
+- No attitude dynamics
+- No rotational state
+- No atmosphere
+- No perturbation models
+- No navigation system
+- No guidance algorithm
+- No feedback control loop
+- No sensor models
+- No actuator models
+- Fixed timestep integration
+- Limited automated validation
+- Console-based output
+
+These limitations are intentional. The project is being developed incrementally, with each iteration introducing additional concepts rather than attempting to reproduce a complete spacecraft GNC system immediately.
 
 ## Lessons Learned
 
+The primary lesson of Day 6 was that software architecture becomes increasingly important as the mathematical model grows.
 
+A single-file implementation was useful while learning the fundamentals because everything was visible in one place. However, continuing to add physics, numerical methods, validation, and analysis to the same file would eventually make the project difficult to understand and maintain.
+
+Separating the project into modules makes the relationships between its components more explicit and provides a foundation for future development.
+
+In particular, the separation between the dynamics model, numerical integrator, and simulation manager establishes an architecture that can support significantly more sophisticated spacecraft modeling later.
 
 ## Next Steps
 
+Day 7 will build on this modular architecture rather than continuing to add everything to `main.cpp`.
 
+Planned areas of development include:
+
+Expanding the validation framework
+Testing numerical accuracy quantitatively
+Comparing numerical propagation against known physical behavior
+Improving validation tolerances
+Testing orbital conservation properties
+Adding additional orbital scenarios
+Improving the separation between simulation configuration and validation configuration
+
+The longer-term goal is to develop this foundation into a small but credible spacecraft dynamics and GNC demonstration project.
 
 ## Project Structure
 
@@ -520,3 +619,27 @@ day6/
 ```
 
 ## Summary
+
+Day 6 represents the transition from a collection of increasingly complex programming exercises into a structured simulation project.
+
+The underlying physics remain relatively simple, but the software architecture is substantially more mature. The simulator now has distinct components for:
+
+$$
+\text{mathematics}
+\rightarrow
+\text{state representation}
+\rightarrow
+\text{dynamics}
+\rightarrow
+\text{numerical integration}
+\rightarrow
+\text{simulation}
+\rightarrow
+\text{orbital analysis}
+\rightarrow
+\text{validation}
+\rightarrow
+\text{output}
+$$
+
+This modular structure provides the foundation for the more advanced numerical, orbital mechanics, and eventually GNC functionality planned for later iterations.
