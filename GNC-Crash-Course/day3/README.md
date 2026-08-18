@@ -63,11 +63,11 @@ The model also allows an externally specified thrust acceleration.
 The total acceleration is calculated as:
 
 $$
-\mathbf{a}\_{total}
+\mathbf{a}\_{"total"}
 =
-\mathbf{a}\_{gravity}
+\mathbf{a}\_{"gravity"}
 +
-\mathbf{a}\_{thrust}
+\mathbf{a}\_{"thrust"}
 $$
 
 This establishes the basic structure needed for future powered-flight simulations.
