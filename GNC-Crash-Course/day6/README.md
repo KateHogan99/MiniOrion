@@ -191,9 +191,44 @@ Keeping those responsibilities separate will make it easier to introduce additio
 - `Integrator.h`
 - `Integrator.cpp`
 
+The Integrator module contains the numerical methods used to propagate the spacecraft state.
 
+Two integration methods are currently available:
+
+- Euler
+- Fourth-order Runge-Kutta (RK4)
+
+The module defines an 'Integrator' enumeration that allows the simulation configuration to specify which numerical method should be used.
+
+##### Euler integration
+
+Euler integration approximates the next state using the derivative at the beginning of the timestep.
+
+It is simple and computationally inexpensive, but generally produces significantly more numerical error than RK4 for orbital propagation.
+
+##### RK4 integration
+
+RK4 evaluates the state derivative at four points within each timestep and combines those evaluations using a weighted average.
+
+The four evaluations are commonly represented as:
+
+$$
+k_1, k_2, k_3, k_4
+$$
+
+with the final update taking the form:
+
+$$
+y_{n+1} = y_n + \frac{\delta t}{6}\left(k_1 + 2k_2 + 2k_3 + k_4\right)
+$$
 
 #### Why this matters
+
+The separation between `Dynamics` and `Integrator` is particularly important for future development.
+
+The numerical integrator does not need to know the details of why an acceleration exists. It only needs the state derivative.
+
+This makes it possible to improve or replace the dynamics model without rewriting the integration algorithm.
 
 ### `OrbitalMechanics`
 
@@ -206,6 +241,8 @@ Keeping those responsibilities separate will make it easier to introduce additio
 
 #### Why this matters
 
+
+
 ### `Simulation`
 
 #### Files
@@ -216,6 +253,8 @@ Keeping those responsibilities separate will make it easier to introduce additio
 
 
 #### Why this matters
+
+
 
 ### `TestCases`
 
@@ -228,6 +267,8 @@ Keeping those responsibilities separate will make it easier to introduce additio
 
 #### Why this matters
 
+
+
 ### `Validation`
 
 #### Files
@@ -238,6 +279,8 @@ Keeping those responsibilities separate will make it easier to introduce additio
 
 
 #### Why this matters
+
+
 
 ### `Output`
 
