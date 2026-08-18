@@ -140,19 +140,94 @@ This provides a useful physical quantity for classifying the trajectories produc
 
 ## New Test Cases
 
+The TestCases module now provides five predefined scenarios. 
+
 ### 1. No Gravity
+
+This scenario sets:
+
+$$
+\mu = 0
+$$
+
+and applies a constant thrust acceleration.
+
+This provides a case with a known analytical solution and is therefore useful for validating the numerical integrator.
 
 ### 2. Gravity Only
 
+This scenario enables central-body gravity while applying no thrust.
+
+It provides a basic test of the gravitational dynamics model.
+
 ### 3. Circular Orbit
+
+The initial velocity is selected using the circular-orbit relationship:
+
+$$
+v_c = \sqrt{\frac{\mu}{r}}
+$$
+
+With the appropriate initial conditions and no thrust, the spacecraft should remain approximately at a constant orbital radius.
+
+This makes circular-orbit radius stability a useful validation criterion.
 
 ### 4. Elliptical Orbit
 
+Day 7 introduces an initial condition corresponding to a bound, non-circular orbit.
+
+For an elliptical orbit:
+
+$$
+0 < e < 1
+$$
+
+The spacecraft's radius should vary throughout the orbit while remaining within a bounded trajectory.
+
+The validation framework uses orbital eccentricity to assess whether the trajectory remains consistent with an elliptical orbit.
+
 ### 5. Escape Trajectory
+
+Day 7 also introduces an unbound trajectory.
+
+For an escape trajectory:
+
+$$
+e > 1
+$$
+
+and the specific orbital energy is positive:
+
+$$
+\epsilon > 0
+$$
+
+The test case provides a way to examine whether the simulation correctly represents motion that is no longer gravitationally bound.
 
 ## Validation Framework
 
+The most significant development in Day 7 is the expanded validation framework.
+
+Instead of having one validation function, the project now contains separate validation functions for different physical behaviors.
+
+The central validation process calls each individual check and reports its result.
+
 ### Relative Error
+
+Day 7 introduces a reusable relative-error calculation:
+
+$$
+
+$$
+
+where:
+
+- $x$ is the calculated value
+- $x_{ref}$ is the reference value
+
+Relative error is particularly useful when quantities may have very different scales.
+
+For example, an absolute error of $0.1$ might be insignificant for a quantity near $1000$, but extremely significant for a quantity near $0.01$.
 
 ### Validation Configuration
 
