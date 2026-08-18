@@ -137,3 +137,53 @@ Conceptually, eccentricity describes the shape of the orbit:
 | $e>1$ | Hyperbolic |
 
 This provides a useful physical quantity for classifying the trajectories produced by the simulator.
+
+## New Test Cases
+
+### 1. No Gravity
+
+### 2. Gravity Only
+
+### 3. Circular Orbit
+
+### 4. Elliptical Orbit
+
+### 5. Escape Trajectory
+
+## Validation Framework
+
+### Relative Error
+
+### Validation Configuration
+
+#### Important distinction
+
+### Validation Tests
+
+#### Constant Acceleration
+
+## Circular Orbit Validation
+
+## Orbital Energy Conservation
+
+## Angular Momentum Conservation
+
+## Elliptical Orbit Validation
+
+## Escape Trajectory Validation
+
+## Validation Flow
+
+## Separation of Configuration
+
+## Current Program Flow
+
+## Directory Structure
+
+## What I Learned
+
+## Limitations
+
+## Next Steps
+
+## Summary
