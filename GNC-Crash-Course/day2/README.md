@@ -128,7 +128,7 @@ This allows quantities such as velocity multiplied by time or acceleration multi
 The magnitude of a two-dimensional vector is:
 
 $$
-|\mathbf{a}| = \sqrt{a_x^2+a_y^2}
+|\mathbf{a}|=\sqrt{a_x^2+a_y^2}
 $$
 
 This is used to calculate quantities such as:
