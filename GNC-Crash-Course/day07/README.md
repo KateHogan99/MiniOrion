@@ -102,7 +102,7 @@ This represents a shift from simply running simulations toward testing simulatio
 The simulation continues to calculate specific orbital mechanical energy:
 
 $$
-
+\epsilon = \frac{v^2}{2} - \frac{\mu}{r}
 $$
 
 For an ideal two-body system with no thrust, specific orbital energy should remain constant.
@@ -114,7 +114,7 @@ The validation framework uses changes in this quantity as one measure of numeric
 For the 2D simulation, specific angular momentum is represented by the z-component:
 
 $$
-
+h_z = xv_y - yv_x
 $$
 
 For an ideal two-body system without external torque, angular momentum should remain constant.
