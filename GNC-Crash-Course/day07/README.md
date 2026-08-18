@@ -283,13 +283,13 @@ The numerical result is compared against the analytical constant-acceleration so
 The analytical solution is:
 
 $$
-
+r(t) = r_0 + v_0t + \frac{1}{2}at^2
 $$
 
 and
 
 $$
-
+v(t) = v_0 + at
 $$
 
 The numerical and analytical results are compared using relative error.
@@ -303,7 +303,7 @@ The circular-orbit validation checks whether the initial conditions actually rep
 The initial speed is compared against:
 
 $$
-
+v_c = \sqrt{\frac{\mu}{r}}
 $$
 
 If the initial conditions are not sufficiently close to the expected circular velocity, the test is not considered applicable.
@@ -329,7 +329,7 @@ The simulation similarly evaluates conservation of specific angular momentum.
 For an ideal two-body system with no external torque:
 
 $$
-
+h = \text{constant}
 $$
 
 The validation process determines the largest deviation from the initial angular momentum and compares it against the configured relative tolerance.
@@ -343,7 +343,7 @@ The elliptical-orbit validation calculates eccentricity at the beginning and end
 The change is:
 
 $$
-
+\Delta e = \left| e_{final} - e_{initial} \right|
 $$
 
 The simulation passes if this change remains within the configured eccentricity tolerance.
@@ -357,13 +357,13 @@ The escape trajectory test is designed to represent an unbound orbit.
 The initial conditions are expected to produce:
 
 $$
-
+\epsilon > 0
 $$
 
 and:
 
 $$
-
+e > 1
 $$
 
 The validation also examines the spacecraft's radial behavior near the end of the simulation.
