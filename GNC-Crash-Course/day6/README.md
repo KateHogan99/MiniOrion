@@ -154,9 +154,9 @@ The module provides functions for:
 
 The gravitational acceleration follows the two-body point-mass model:
 
-$$$
+$$
 \vec{a}_{gravity} = -\frac{\mu}{r^3}\vec{r}
-$$$
+$$
 
 where:
 
