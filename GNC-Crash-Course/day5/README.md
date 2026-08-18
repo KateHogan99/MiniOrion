@@ -159,9 +159,7 @@ Orbital dynamics are nonlinear.
 The gravitational acceleration depends on the spacecraft's current position:
 
 $$
-\mathbf{a}_{gravity}
-=
--\frac{\mu}{r^3}\mathbf{r}
+\mathbf{a}_{gravity} = -\frac{\mu}{r^3}\mathbf{r}
 $$
 
 As the spacecraft moves, its position changes, which changes its acceleration.
@@ -202,11 +200,7 @@ The simulation calculates two important conserved quantities for an ideal two-bo
 Specific orbital mechanical energy is:
 
 $$
-\epsilon
-=
-\frac{v^2}{2}
--
-\frac{\mu}{r}
+\epsilon = \frac{v^2}{2} - \frac{\mu}{r}
 $$
 
 where:
@@ -239,19 +233,13 @@ If the simulation produces a significant change in orbital energy when no physic
 Specific angular momentum is:
 
 $$
-\mathbf{h}
-=
-\mathbf{r}
-\times
-\mathbf{v}
+\mathbf{h} = \mathbf{r} \times \mathbf{v}
 $$
 
 Because this project is currently two-dimensional, only the z-component is nonzero:
 
 $$
-h_z
-=
-xv_y-yv_x
+h_z = xv_y - yv_x
 $$
 
 The simulation therefore stores angular momentum as a scalar.
@@ -275,21 +263,11 @@ Like orbital energy, angular momentum provides an additional diagnostic of numer
 The simulation retains the constant-acceleration analytical solution from previous iterations:
 
 $$
-\mathbf{r}(t)
-=
-\mathbf{r}_0
-+
-\mathbf{v}_0t
-+
-\frac{1}{2}\mathbf{a}t^2
+\mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}_0t + \frac{1}{2}\mathbf{a}t^2
 $$
 
 $$
-\mathbf{v}(t)
-=
-\mathbf{v}_0
-+
-\mathbf{a}t
+\mathbf{v}(t) = \mathbf{v}_0 + \mathbf{a}t
 $$
 
 This analytical solution is not used to propagate the spacecraft.
@@ -364,9 +342,7 @@ This allows the numerical integrator to be tested against a nonlinear dynamical 
 The initial velocity is selected using the circular-orbit relationship:
 
 $$
-v_c
-=
-\sqrt{\frac{\mu}{r}}
+v_c = \sqrt{\frac{\mu}{r}}
 $$
 
 The spacecraft begins with velocity perpendicular to its position vector.
@@ -374,7 +350,7 @@ The spacecraft begins with velocity perpendicular to its position vector.
 For an ideal circular orbit:
 
 $$
-r=\text{constant}
+r = \text{constant}
 $$
 
 and the spacecraft should maintain a nearly constant orbital radius.
