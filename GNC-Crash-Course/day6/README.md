@@ -408,7 +408,35 @@ This will make it easier to eventually replace console output with other forms o
 
 ## Program Flow
 
+The Day 6 program follows this general sequence:
 
+1. `main.cpp` creates a simulation configuration using a predefined test case.
+2. The simulation is executed through `run_simulation()`.
+3. The simulation initializes the spacecraft state.
+4. At each timestep, the dynamics model calculates the state derivative.
+5. The selected numerical integrator advances the state.
+6. Diagnostic quantities are calculated and stored in a `SimulationStep`.
+7. The resulting simulation history is returned to `main.cpp`.
+8. The Output module displays the results.
+9. The Validation module evaluates the simulation.
+
+This creates a much cleaner separation between:
+
+$$
+\text{configuration}
+\rightarrow
+\text{simulation}
+\rightarrow
+\text{physics}
+\rightarrow
+\text{integration}
+\rightarrow
+\text{analysis}
+\rightarrow
+\text{output}
+\rightarrow
+\text{validation}
+$$
 
 ## What Changed from Day 5
 
