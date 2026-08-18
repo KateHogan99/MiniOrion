@@ -237,11 +237,33 @@ This makes it possible to improve or replace the dynamics model without rewritin
 - `OrbitalMechanics.h`
 - `OrbitalMechanics.cpp`
 
+The Orbital Mechanics module calculates quantities used to characterize and analyze the spacecraft's orbit.
 
+Currently implemented quantities include:
+
+##### Specific orbital energy
+
+$$
+\epsilon = \frac{v^2}{2} - \frac{\mu}{r}
+$$
+
+For an ideal two-body system without thrust, specific orbital energy should remain constant.
+
+##### Specific angular momentum
+
+For the 2D simulation, the angular momentum is represented by the out-of-plane z-component:
+
+$$
+h_z = xv_y - yv_x
+$$
+
+For an ideal two-body system without external torque, this quantity should remain constant.
 
 #### Why this matters
 
+These quantities provide more meaningful ways of evaluating an orbital simulation than simply examining whether the spacecraft appears to follow a reasonable trajectory.
 
+They will also become important inputs to the validation framework in later iterations.
 
 ### `Simulation`
 
