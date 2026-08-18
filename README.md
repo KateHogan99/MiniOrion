@@ -289,7 +289,7 @@ This checklist will be updated as the project develops.
 The repository is currently organized around two major areas:
 
 ```text
-mini-orion/
+MiniOrion/
 │
 ├── README.md
 │
@@ -312,3 +312,140 @@ mini-orion/
 The `GNC-Crash-Course` directory documents the project's incremental development.
 
 Each iteration focuses on a specific set of programming, numerical, or GNC concepts.
+
+---
+
+# Navigating the GNC Crash Course
+
+The individual iteration directories are intended to be read chronologically.
+
+## Day 1 — Basic Kinematics
+
+Introduces:
+
+- C++ fundamentals
+- Structures
+- Functions
+- Position
+- Velocity
+- Acceleration
+- Constant-acceleration equations
+
+Start here to see the original baseline implementation.
+
+---
+
+## Day 2 — Vector Mathematics
+
+Introduces:
+
+- `Vector2D`
+- Vector addition
+- Vector subtraction
+- Scalar multiplication
+- Vector magnitude
+- Vector-based state representation
+
+This establishes the mathematical representation used by the later orbital mechanics code.
+
+---
+
+## Day 3 — Gravitational Dynamics
+
+Introduces:
+
+- Gravitational parameter μ
+- Point-mass gravity
+- Position-dependent acceleration
+- Orbital motion
+- Initial orbital test cases
+
+This is where the project first becomes an orbital mechanics simulation.
+
+---
+
+## Day 4 — State Derivatives and Euler Integration
+
+Introduces:
+
+- State derivatives
+- Dynamics formulation
+- Forward Euler integration
+- Separation of dynamics from propagation
+
+This establishes the numerical propagation framework.
+
+---
+
+## Day 5 — RK4 and Orbital Analysis
+
+Introduces:
+
+- Fourth-order Runge-Kutta integration
+- Integrator selection
+- Simulation history
+- Specific orbital energy
+- Specific angular momentum
+- Analytical validation
+- More structured simulation output
+
+This is the point where the simulation begins to resemble a numerical dynamics application rather than a simple physics exercise.
+
+---
+
+## Day 6 — C++ Project Architecture
+
+Introduces:
+
+- Header/source separation
+- Modularization
+- Separation of concerns
+- Reusable components
+- Project organization
+
+This iteration focuses primarily on software engineering rather than adding another major physics model.
+
+---
+
+## Day 7 — Numerical Validation
+
+Introduces:
+
+- Validation architecture
+- Analytical validation
+- Conservation-law validation
+- Orbital test cases
+- PASS / FAIL / N/A results
+- Error tolerances
+- Relative error concepts
+
+This iteration asks a more important engineering question:
+
+> How do I know that the simulation is producing trustworthy results?
+
+---
+
+## Days 8–12
+
+These iterations are still under development.
+
+They will progressively expand the project toward:
+
+- More rigorous numerical analysis
+- Orbital mechanics
+- Maneuvers
+- Guidance
+- Control
+- Navigation
+- Integrated GNC behavior
+- Final portfolio presentation
+
+The exact implementation will evolve as I learn more.
+
+---
+
+# Technical Approach
+
+The project is intentionally being developed from relatively fundamental components rather than relying on a high-level aerospace simulation framework.
+
+The core numerical loop is conceptually:
