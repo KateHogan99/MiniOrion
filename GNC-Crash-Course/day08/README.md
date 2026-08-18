@@ -1,1 +1,1 @@
-# Day 8 -- Guidance and Control
+# Day 8 — Guidance and Control
