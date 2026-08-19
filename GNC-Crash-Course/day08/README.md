@@ -40,10 +40,10 @@ Day 8
 
 ## Directory Structure
 
-Day 8 sees the addition of two new modules, Guidance and Control, adding two files each to `day7/include` and `day7/src`. 
+Day 8 sees the addition of two new modules, Guidance and Control, adding two files each to `day8/include` and `day8/src`. 
 
 ```text
-day7/
+day8/
 ├── include/
 │   ├── Control.h
 │   ├── Dynamics.h
