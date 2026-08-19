@@ -451,7 +451,7 @@ This is an important architectural improvement because `main.cpp` no longer need
 
 ## Directory Structure
 
-Day 7 also introduces a more conventional separation between header files and source files.
+Day 7 mirrors the Day 6 structure with a conventional separation between header files and source files.
 
 ```text
 day7/
@@ -477,8 +477,6 @@ day7/
 │
 └── README.md
 ```
-
-This structure keeps interfaces and implementations separate and provides a cleaner foundation for future development.
 
 ## What I Learned
 
