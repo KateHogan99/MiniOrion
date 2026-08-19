@@ -26,6 +26,7 @@ SimulationStep calculate_simulation_step(
     double time,
     double distance_this_step,
     double total_distance,
+    double command_duration,
     SimulationConfig config
 )
 {
@@ -78,7 +79,8 @@ SimulationStep calculate_simulation_step(
         orbital_energy,
         angular_momentum,
         distance_this_step,
-        total_distance
+        total_distance,
+        command_duration
     };
 }
 
@@ -149,6 +151,7 @@ std::vector<SimulationStep> run_simulation(
             0.0,
             0.0,
             0.0,
+            0.0,
             config
         );
 
@@ -188,6 +191,7 @@ std::vector<SimulationStep> run_simulation(
                 elapsed_time,
                 distance_this_step,
                 total_distance,
+                config.time_step,
                 config
             );
 
@@ -267,6 +271,7 @@ std::vector<SimulationStep> run_guided_maneuver(
             0.0,
             0.0,
             0.0,
+            0.0,
             initial_config
         )
     );
@@ -308,11 +313,14 @@ std::vector<SimulationStep> run_guided_maneuver(
                 remaining_time;
         }
 
+        double guidance_time =
+            elapsed_time + 0.5 * current_time_step;
+
         GuidanceCommand guidance_command =
             calculate_guidance_command(
                 maneuver,
                 state,
-                elapsed_time
+                guidance_time
             );
 
         ControlCommand control_command =
@@ -372,6 +380,7 @@ std::vector<SimulationStep> run_guided_maneuver(
                 elapsed_time,
                 distance_this_step,
                 total_distance,
+                control_command.thrust_duration,
                 current_config
             );
 

@@ -1,10 +1,8 @@
 #include "Control.h"
 #include "Guidance.h"
+#include "GNCValidation.h"
 #include "Simulation.h"
-#include "State.h"
-#include "Vector2D.h"
 
-#include <cmath>
 #include <iomanip>
 #include <iostream>
 #include <stdexcept>
@@ -24,7 +22,7 @@ int main()
      *
      * to:
      *
-     *   Position: (100, 0) m
+     *   Position: (100, 50) m
      *   Velocity: (0, 0) m/s
      *
      * over exactly 10 seconds.
@@ -44,7 +42,7 @@ int main()
 
     maneuver.desired_state.position = {
         100.0,
-        0.0
+        50.0
     };
 
     maneuver.desired_state.velocity = {
@@ -64,7 +62,7 @@ int main()
 
     ControlConfig control_config;
 
-    control_config.maximum_acceleration =
+    control_config.acceleration_constraint =
         100.0;
 
 
@@ -91,7 +89,7 @@ int main()
     };
 
     simulation_config.time_step =
-        0.1;
+        0.05;
 
     simulation_config.number_of_steps =
         static_cast<int>(
@@ -101,6 +99,51 @@ int main()
 
     simulation_config.integrator =
         Integrator::RK4;
+
+    simulation_config.maneuver =
+        maneuver;
+
+    simulation_config.control_config =
+        control_config;
+
+
+    /*
+     * ========================================================
+     * GNC VALIDATION CONFIGURATION
+     * ========================================================
+     */
+
+    GNCValidationConfig validation_config;
+
+    validation_config.boundary_position_tolerance =
+        1e-9;
+
+    validation_config.boundary_velocity_tolerance =
+        1e-9;
+
+    validation_config.intermediate_position_tolerance =
+        0.1;
+
+    validation_config.intermediate_velocity_tolerance =
+        0.1;
+
+    validation_config.acceleration_tolerance =
+        1e-9;
+
+    validation_config.command_duration_tolerance =
+        1e-9;
+
+    validation_config.final_position_tolerance =
+        0.1;
+
+    validation_config.final_velocity_tolerance =
+        0.1;
+
+    validation_config.maneuver_duration_tolerance =
+        1e-9;
+
+    validation_config.simulated_trajectory_tolerance =
+        0.1;
 
 
     /*
@@ -121,7 +164,7 @@ int main()
 
         /*
          * ====================================================
-         * OUTPUT
+         * SIMULATION OUTPUT
          * ====================================================
          */
 
@@ -140,8 +183,8 @@ int main()
             << " s\n";
 
         std::cout
-            << "Maximum acceleration: "
-            << control_config.maximum_acceleration
+            << "Acceleration constraint: "
+            << control_config.acceleration_constraint
             << " m/s^2\n";
 
         std::cout
@@ -197,89 +240,15 @@ int main()
 
         /*
          * ====================================================
-         * FINAL STATE VALIDATION
+         * GNC VALIDATION
          * ====================================================
          */
 
-        const SimulationStep& final_result =
-            results.back();
-
-        Vector2D final_position_error =
-            subtract_vectors(
-                maneuver.desired_state.position,
-                final_result.state.position
-            );
-
-        Vector2D final_velocity_error =
-            subtract_vectors(
-                maneuver.desired_state.velocity,
-                final_result.state.velocity
-            );
-
-        double position_error =
-            calculate_magnitude(
-                final_position_error
-            );
-
-        double velocity_error =
-            calculate_magnitude(
-                final_velocity_error
-            );
-
-
-        std::cout
-            << "\n"
-            << "============================================================\n"
-            << "FINAL MANEUVER VALIDATION\n"
-            << "============================================================\n";
-
-        std::cout
-            << "Final time: "
-            << final_result.time
-            << " s\n";
-
-        std::cout
-            << "\nDesired position: ("
-            << maneuver.desired_state.position.x
-            << ", "
-            << maneuver.desired_state.position.y
-            << ")\n";
-
-        std::cout
-            << "Final position:   ("
-            << final_result.state.position.x
-            << ", "
-            << final_result.state.position.y
-            << ")\n";
-
-        std::cout
-            << "Position error: "
-            << position_error
-            << " m\n";
-
-        std::cout
-            << "\nDesired velocity: ("
-            << maneuver.desired_state.velocity.x
-            << ", "
-            << maneuver.desired_state.velocity.y
-            << ")\n";
-
-        std::cout
-            << "Final velocity:   ("
-            << final_result.state.velocity.x
-            << ", "
-            << final_result.state.velocity.y
-            << ")\n";
-
-        std::cout
-            << "Velocity error: "
-            << velocity_error
-            << " m/s\n";
-
-        std::cout
-            << "\nTotal distance traveled: "
-            << final_result.total_distance
-            << " m\n";
+        gnc_validate_simulation(
+            results,
+            simulation_config,
+            validation_config
+        );
     }
     catch (const std::runtime_error& error)
     {

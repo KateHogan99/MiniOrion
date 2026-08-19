@@ -7,7 +7,7 @@
 
 struct ControlConfig
 {
-    double maximum_acceleration; // Unit: m/s^2
+    double acceleration_constraint; // Unit: m/s^2
 };
 
 struct ControlCommand

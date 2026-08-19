@@ -28,7 +28,7 @@ struct SimulationConfig
 
 struct SimulationStep
 {
-    double time; // Unit: seconds
+    double time;
 
     State state;
 
@@ -43,6 +43,8 @@ struct SimulationStep
 
     double distance_this_step;
     double total_distance;
+
+    double command_duration;
 };
 
 double calculate_displacement(
@@ -55,6 +57,7 @@ SimulationStep calculate_simulation_step(
     double time,
     double distance_this_step,
     double total_distance,
+    double command_duration,
     SimulationConfig config
 );
 

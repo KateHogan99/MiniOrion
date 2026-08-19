@@ -191,6 +191,20 @@ std::string validate_constant_acceleration(
         << "\n";
 
     std::cout
+        << "Analytical final velocity: ("
+        << analytical_state.velocity.x
+        << ", "
+        << analytical_state.velocity.y
+        << ")\n";
+
+    std::cout
+        << "Numerical final velocity:  ("
+        << numerical_state.velocity.x
+        << ", "
+        << numerical_state.velocity.y
+        << ")\n";
+
+    std::cout
         << "Velocity error: "
         << velocity_error
         << "\n";

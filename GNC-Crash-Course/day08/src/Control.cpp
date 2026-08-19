@@ -11,7 +11,7 @@ ControlCommand calculate_control_command(
 {
     (void)current_state;
 
-    if (control_config.maximum_acceleration <= 0.0)
+    if (control_config.acceleration_constraint <= 0.0)
     {
         throw std::runtime_error(
             "Maximum acceleration must be greater than zero."
@@ -39,7 +39,7 @@ ControlCommand calculate_control_command(
     }
 
     if (desired_magnitude <=
-        control_config.maximum_acceleration)
+        control_config.acceleration_constraint)
     {
         control_command.thrust_acceleration =
             desired_acceleration;
@@ -49,7 +49,7 @@ ControlCommand calculate_control_command(
         control_command.thrust_acceleration =
             scale_vector(
                 desired_acceleration,
-                control_config.maximum_acceleration /
+                control_config.acceleration_constraint /
                 desired_magnitude
             );
     }
