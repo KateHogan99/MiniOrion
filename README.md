@@ -236,7 +236,7 @@ The project is designed so that earlier iterations remain available as a record 
 
 # Development Status
 
-## Current Iteration: 7 / 12
+## Current Iteration: 8 / 12
 
 The project has progressed from a single-file kinematics demonstration to a modular two-dimensional orbital simulation with numerical integration and independent validation routines.
 
@@ -425,7 +425,24 @@ This iteration asks a more important engineering question:
 
 ---
 
-## Days 8–12
+## Day 8 — Guidance, Control, and GNC Validation
+
+Introduces:
+
+- Introduce a basic Guidance module.
+- Introduce a basic Control module.
+- Connect Guidance and Control to the existing simulation.
+- Implement a cubic trajectory for point-to-point maneuvers.
+- Constrain commanded acceleration to a maximum value.
+- Preserve the validation-first mindset established in Day 7.
+
+The major goal of this iteration was to move beyond simply simulating a spacecraft's motion and begin answering a more important question:
+
+> Can the system determine where the spacecraft should go, generate an appropriate control command, execute that command through the simulation, and validate that the resulting trajectory behaves as expected?
+
+---
+
+## Days 9–12
 
 These iterations are still under development.
 
