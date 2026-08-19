@@ -618,6 +618,8 @@ day6/
 └── README.md
 ```
 
+This structure keeps interfaces and implementations separate and provides a cleaner foundation for future development.
+
 ## Summary
 
 Day 6 represents the transition from a collection of increasingly complex programming exercises into a structured simulation project.
