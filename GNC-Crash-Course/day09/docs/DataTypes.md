@@ -40,6 +40,10 @@ Acceleration constraint, eventually PID parameters.
 
 Gravity parameter, timestep, integrator, etc.
 
+## `SimulationResults`
+
+
+
 ## `ValidationConfig`
 
 "What constitutes an acceptable result?"
