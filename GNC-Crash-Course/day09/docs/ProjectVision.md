@@ -58,3 +58,56 @@ Potentially later:
 - Machine-readable simulation data
 - Python/MATLAB visualization
 - Experiment-specific plots
+
+## Architecture
+
+The final product show follow this data flow:
+
+```text
+                        Experiment
+                             │
+                             ▼
+                      Configuration
+                             │
+                             ▼
+                         Simulation
+                             │
+             ┌───────────────┼───────────────┐
+             ▼               ▼               ▼
+         Guidance         Control         Dynamics
+             │               │               │
+             └───────────────┼───────────────┘
+                             ▼
+                        Integrator
+                             │
+                             ▼
+                     Simulation Results
+                             │
+                    ┌────────┴────────┐
+                    ▼                 ▼
+                Validation           Output
+                                      │
+                             ┌────────┴────────┐
+                             ▼                 ▼
+                           Python           MATLAB
+```
+
+### Dependencies
+
+Dependencies should generally point downward. 
+
+For example:
+
+- `Guidance` can use physics/state types.
+- `Control` can use Guidance output.
+- `Simulation` can use Dynamics and Integrator.
+- `Validation` can inspect simulation results.
+- `Output` can display/export results.
+
+But:
+
+- Physics should not know about experiments.
+- Dynamics should not know about validation.
+- Integrators should not know about console output.
+- Validation should not perform simulation.
+- Output should not calculate physics.
